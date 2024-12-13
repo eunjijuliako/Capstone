@@ -6,8 +6,6 @@
 #
 #               - This code modify options/finetune_realesrgan_x4plus.yml accordingly, especially the datasets part:
 #               - Modify the "# === Adjust" section to suit your dataset and environment.
-#               - Input: Train & Test Image Folders / Output: Resized Train & Test Image Folders
-
 ---
 # general settings
 name: finetune_RealESRGANx4plus_400k_pairdata
