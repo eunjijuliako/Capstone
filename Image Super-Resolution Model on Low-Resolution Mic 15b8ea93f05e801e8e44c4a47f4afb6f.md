@@ -39,7 +39,6 @@ This research aims to improve classification performance by leveraging existing 
 
 - Case Study 1: Four Types of White Blood Cell
     
-    Link: [https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data](https://www.kaggle.com/datasets/paultimothymooney/blood-cells/data)
     
     | **Class** | **Eosinophil** | **Lymphocyte** | **Monocyte** | **Neutrophil** |
     | --- | --- | --- | --- | --- |
@@ -52,9 +51,11 @@ This research aims to improve classification performance by leveraging existing 
     
     | **Super Resolution** | Train: 9,957 LR&HR pair dataset without classTest: 2,487 with class (the test dataset of super-resolution will be a training dataset for classification) |
     | --- | --- |
+    
+    Link: [https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data](https://www.kaggle.com/datasets/paultimothymooney/blood-cells/data)
+    
 - Case Study 2: Five Types of White Blood Cell
     
-    Link: [https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data](https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data)
     
     | **Class** | **Eosinophil** | **Lymphocyte** | **Monocyte** | **Neutrophil** | **Basophil** |
     | --- | --- | --- | --- | --- | --- |
@@ -74,7 +75,9 @@ This research aims to improve classification performance by leveraging existing 
     
     | **Super Resolution** | Train: 10,175 LR&HR pair dataset without classTest: 4063 with class (the test dataset of super-resolution will be a training dataset for classification) |
     | --- | --- |
-
+    
+    Link: https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data
+  
 # Algorithm
 
 ## 1. Overview
