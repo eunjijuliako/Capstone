@@ -42,11 +42,7 @@ This research aims to improve classification performance by leveraging existing 
     
     | **Class** | **Eosinophil** | **Lymphocyte** | **Monocyte** | **Neutrophil** |
     | --- | --- | --- | --- | --- |
-    | **Explanation** | (3% in blood)
-    First to respond to bacteria or a virus | (30% in blood)
-    Known for their role in asthma | (6% in blood)
-    Known for their role in allergy symptoms | (60% in blood)
-    Fight infections by producing antibodies |
+    | **Explanation** | (3% in blood) First to respond to bacteria or a virus | (30% in blood) Known for their role in asthma | (6% in blood) Known for their role in allergy symptoms | (60% in blood) Fight infections by producing antibodies |
     | **Classification** | Train (2497), Test (623) | Train (2483), Test (620) | Train (2478), Test (620) | Train (2499), Test (624) |
     
     | **Super Resolution** | Train: 9,957 LR&HR pair dataset without classTest: 2,487 with class (the test dataset of super-resolution will be a training dataset for classification) |
@@ -59,19 +55,8 @@ This research aims to improve classification performance by leveraging existing 
     
     | **Class** | **Eosinophil** | **Lymphocyte** | **Monocyte** | **Neutrophil** | **Basophil** |
     | --- | --- | --- | --- | --- | --- |
-    | **Explanation** | (3% in blood)
-    First to respond to bacteria or a virus | (30% in blood)
-    Known for their role in asthma | (6% in blood)
-    Known for their role in allergy symptoms | (60% in blood)
-    Fight infections by producing antibodies | (1% in blood)
-    Clean up dead cells
-     |
-    | **Classification** | Train (787), 
-    Test (197) | Train (2128),
-    Test (532) | Train (187), 
-    Test (47) | Train (76), 
-    Test (20) | Train (71), 
-    Test (18) |
+    | **Explanation** | (3% in blood) First to respond to bacteria or a virus | (30% in blood) Known for their role in asthma | (6% in blood) Known for their role in allergy symptoms | (60% in blood) Fight infections by producing antibodies | (1% in blood) Clean up dead cells |
+    | **Classification** | Train (787), Test (197) | Train (2128), Test (532) | Train (187), Test (47) | Train (76), Test (20) | Train (71), Test (18) |
     
     | **Super Resolution** | Train: 10,175 LR&HR pair dataset without classTest: 4063 with class (the test dataset of super-resolution will be a training dataset for classification) |
     | --- | --- |
