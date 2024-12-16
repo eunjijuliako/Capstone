@@ -45,7 +45,7 @@ This research aims to improve classification performance by leveraging existing 
     | **Explanation** | (3% in blood) First to respond to bacteria or a virus | (30% in blood) Known for their role in asthma | (6% in blood) Known for their role in allergy symptoms | (60% in blood) Fight infections by producing antibodies |
     | **Classification** | Train (2497), Test (623) | Train (2483), Test (620) | Train (2478), Test (620) | Train (2499), Test (624) |
     
-    | **Super Resolution** | Train: 9,957 LR&HR pair dataset without classTest: 2,487 with class (the test dataset of super-resolution will be a training dataset for classification) |
+    | **Super Resolution** | Train: 9,957 LR&HR pair dataset without class, Test: 2,487 with class (the test dataset of super-resolution will be a training dataset for classification) |
     | --- | --- |
     
     Link: [https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data](https://www.kaggle.com/datasets/paultimothymooney/blood-cells/data)
@@ -58,7 +58,7 @@ This research aims to improve classification performance by leveraging existing 
     | **Explanation** | (3% in blood) First to respond to bacteria or a virus | (30% in blood) Known for their role in asthma | (6% in blood) Known for their role in allergy symptoms | (60% in blood) Fight infections by producing antibodies | (1% in blood) Clean up dead cells |
     | **Classification** | Train (787), Test (197) | Train (2128), Test (532) | Train (187), Test (47) | Train (76), Test (20) | Train (71), Test (18) |
     
-    | **Super Resolution** | Train: 10,175 LR&HR pair dataset without classTest: 4063 with class (the test dataset of super-resolution will be a training dataset for classification) |
+    | **Super Resolution** | Train: 10,175 LR&HR pair dataset without class, Test: 4063 with class (the test dataset of super-resolution will be a training dataset for classification) |
     | --- | --- |
     
     Link: https://www.kaggle.com/datasets/masoudnickparvar/white-blood-cells-dataset/data
@@ -87,8 +87,8 @@ This research aims to improve classification performance by leveraging existing 
     - Since the dataset already contains high-resolution (HR) images, low-resolution (LR) images are generated for training and testing the deep learning-based super-resolution model.
     - The script `Part0.Pre_Processing/degradation_folder_for_super_resolution.py` is used to apply degradation to the HR images, producing degraded LR images.
 2. **Split Dataset into Train and Test Sets**
-    - The dataset is split such that 80% of the images form the training set and 20% form the testing set.
-    - The paired dataset is created, where LR images and corresponding HR images are grouped. However, 20% of the HR images are excluded from training and reserved for testing.
+    - The dataset is split, so 80% of the images are from the training and 20% from the testing sets.
+    - The paired dataset is created, where LR and corresponding HR images are grouped. However, 20% of the HR images are excluded from training and reserved for testing.
     - This is done using the script `Part0.Pre_Processing/dataset_train_test_for_classification.py`.
 
 ---
@@ -113,7 +113,7 @@ The workflow varies depending on the dataset type: **Ground Truth**, **Bicubic**
         
 2. **Method 1: Bicubic Interpolation**
     - Bicubic interpolation is applied to 20% of the raw LR images.
-    - The output images are used for classification: 80% for training, 20% for testing.
+    - The output images are used for classification: 80% for training and 20% for testing.
     - Script: `Part1.Super_Resolution/Bicubic/Bicubic.py`.
         
         ![**Figure 4. Bicubic Prodecure**](https://github.com/eunjijuliako/Capstone/blob/main/Images/Figure%204.%20Bicubic%20Prodecure.png?raw=true)
@@ -122,7 +122,7 @@ The workflow varies depending on the dataset type: **Ground Truth**, **Bicubic**
         
 3. **Method 2: SRGAN**
     - **Train the SRGAN Model:**
-        - The paired dataset (80% training set) is used to train the SRGAN model.
+        - The paired dataset (80% training set) trains the SRGAN model.
         - Training script: `Part1.Super_Resolution/SRGAN/train.py`.
     - **Test the SRGAN Model:**
         - The trained model is tested using the 20% testing set.
@@ -143,7 +143,7 @@ The workflow varies depending on the dataset type: **Ground Truth**, **Bicubic**
         
 5. **Ground Truth**
     - 20% of the Ground Truth images are reserved for classification.
-    - 80% of the reserved Ground Truth images images are used for training, and 20% are reserved for testing.
+    - 80% of the reserved Ground Truth images are used for training, and 20% are reserved for testing.
         
         ![**Figure 6. Ground-Truth Images Prodecure**](https://github.com/eunjijuliako/Capstone/blob/main/Images/Figure%206.%20Ground-Truth%20Images%20Prodecure.png?raw=true)
         
@@ -205,12 +205,12 @@ For all datasets (Raw Images, Bicubic, SRGAN, Real-ESRGAN, Ground Truth), classi
     
 - Real-ESRGAN
     
-    Real-ESRGAN is an advanced model that improves on SRGAN's limitations, creating more detailed images using complex degradation techniques to generate high-resolution images similar to actual low-resolution images. Images produced by Real-ESRGAN were cleaner and had better detail restoration than other models. Compared to SRGAN, black spots, and blurred white areas were more effectively restored, and the boundaries of cells were depicted as smoother and cleaner than in the original. It enabled more precise visualization of cell structures; however, distortions could occur when distinguishing cell size or type, so comparisons with the original image were necessary.
+    Real-ESRGAN is an advanced model that improves on SRGAN's limitations, creating more detailed images using complex degradation techniques to generate high-resolution images similar to actual low-resolution images. Images produced by Real-ESRGAN were cleaner and had better detail restoration than other models. Compared to SRGAN, black spots and blurred white areas were more effectively restored, and the boundaries of cells were depicted as smoother and cleaner than in the original. It enabled more precise visualization of cell structures; however, distortions could occur when distinguishing cell size or type, so comparisons with the original image were necessary.
     
 - **Overall**
     - **PSNR**
         
-        In Case 1, SRGAN achieved the highest PSNR value at 28.1809 dB, while the low-resolution original had the lowest at 12.1323 dB. In Case 2, Real-ESRGAN reached the highest PSNR value at 30.5038 dB, with Bicubic being the lowest at 12.4899 dB. In Case 2, the PSNR value of Real-ESRGAN exceeded 30 dB, indicating the minor pixel difference from the high-resolution original image. On the other hand, the low-resolution original and Bicubic showed the most significant pixel differences from the high-resolution original.
+        In Case 1, SRGAN achieved the highest PSNR value at 28.1809 dB, while the low-resolution original had the lowest at 12.1323 dB. In Case 2, Real-ESRGAN reached the highest PSNR value at 30.5038 dB, with Bicubic being the lowest at 12.4899 dB. In Case 2, the PSNR value of Real-ESRGAN exceeded 30 dB, indicating a minor pixel difference from the high-resolution original image. On the other hand, the low-resolution original and Bicubic showed the most significant pixel differences from the high-resolution original.
         
     - **SSIM**
         
